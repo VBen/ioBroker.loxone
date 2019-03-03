@@ -995,6 +995,52 @@ function loadInfoOnlyAnalogControl(type, uuid, control) {
     }
 }
 
+function loadInfoOnlyTextControl(type, uuid, control) {
+    updateObject(uuid, {
+        type: type,
+        common: {
+            name: control.name,
+            role: 'text'
+        },
+        native: control
+    });
+
+    loadOtherControlStates(control.name, uuid, control.states, ['textAndIcon']);
+
+    createSimpleControlStateObject(control.name, uuid, control.states, 'textAndIcon', 'string', 'text');
+    
+    if (!control.hasOwnProperty('states') || !control.states.hasOwnProperty('active')) {
+        return;
+    }
+    
+    if (!control.hasOwnProperty('details')) {
+        return;
+    }
+}
+
+function loadTextStateControl(type, uuid, control) {
+    updateObject(uuid, {
+        type: type,
+        common: {
+            name: control.name,
+            role: 'text'
+        },
+        native: control
+    });
+
+    loadOtherControlStates(control.name, uuid, control.states, ['textAndIcon']);
+
+    createSimpleControlStateObject(control.name, uuid, control.states, 'textAndIcon', 'string', 'text');
+    
+    if (!control.hasOwnProperty('states') || !control.states.hasOwnProperty('active')) {
+        return;
+    }
+    
+    if (!control.hasOwnProperty('details')) {
+        return;
+    }
+}
+
 function loadIntercomControl(type, uuid, control) {
     updateObject(uuid, {
         type: type,
