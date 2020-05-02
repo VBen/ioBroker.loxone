@@ -1,8 +1,12 @@
 {
     "common": {
         "name": "loxone",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "news": {
+            "1.0.1": {
+                "en": "Added suppot for Text control",
+                "de": "Unterstüztung für Text Control"
+            },
             "1.0.0": {
                 "en": "Fixed several important issues and added AlarmClock control",
                 "de": "Einige wichtige Fehler behoben und AlarmClock Control hinzugefügt"
